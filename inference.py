@@ -32,7 +32,6 @@ def predictions(face_given,frame):
 	pred = maskNet.predict(face)
 
 	return pred
-	
 
 '''
 def detect_faces():
@@ -70,7 +69,7 @@ def main():
       
 		faces = detect_faces(frame)
 
-		outer_frame_color = (0, 255, 0)
+		outer_frame_color = (0, 255, 50)
 
 		for face in faces:
 			(x,y,w,h) = face
@@ -97,10 +96,10 @@ def main():
 		#handling the frame rectangle and other statistical info
 		cv2.rectangle(frame,(0,0),(w_f-130,h_f-100),outer_frame_color,6)
 		cv2.putText(frame, "Detected Faces : "+str(len(faces)), (10,18),cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255,255,222), 2)
-		cv2.putText(frame, "Positive Threat Count : "+str(danger), (10,31),cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
-		cv2.putText(frame, "Negative Threat Count : "+str(no_risk), (10,44),cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 0), 2)
+		cv2.putText(frame, "Positive Threat Count : "+str(danger), (10,35),cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
+		cv2.putText(frame, "Negative Threat Count : "+str(no_risk), (10,48),cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 0), 2)
 
-		cv2.imshow("Face Mask Detector - BETA Jetson Nano", frame)
+		cv2.imshow("Face Mask Detector - 17203957", frame)
 
 		#press q to quit
 		if cv2.waitKey(1) & 0xFF == ord('q'):
